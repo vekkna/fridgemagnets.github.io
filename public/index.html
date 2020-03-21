@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fridge Magnets!</title>
+  </head>
+  <body>
+
+    <h1>Fridge Magnet!</h1>
+    <p>Enter your text here:</p>
+    <textarea name="inputText" id="inputText" cols="100" rows="10"></textarea>
+    <br>
+    <button id="submit" type="button" onclick="sendToDatabase()"> Get Magnets code</button>
+    <p>Share this code with your students:</p>
+    <p id="shareCode"></p>
+
+    <script src="code/sendToDatabase.js"></script>
+    <script src="/__/firebase/7.12.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.12.0/firebase-database.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
+  </body>
+</html>
