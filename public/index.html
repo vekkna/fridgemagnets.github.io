@@ -4,26 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fridge Magnets!</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
-  <body>
-
-    <h1>Fridge Magnet!</h1>
-    <p>Enter your text here:</p>
-    <textarea name="inputText" id="inputText" cols="100" rows="10"></textarea>
-    <br>
-    <button id="submit" type="button" onclick="sendToDatabase()"> Get Magnets code</button>
-    <p>Share this code with your students:</p>
-    <p id="shareCode"></p>
-
-    <label>Enter code here:</label>
-    <input type="text" id="keyInput">
-    <button type="button" onclick="getMagnets()">Get magnets</button>
-    <textarea name="magnets" id="magnets" cols="30" rows="10"></textarea>
+  <body class="w3-pale-blue">
+    <header class="w3-container w3-deep-orange">
+        <h1>Fridge Magnets</h1>
+    </header>
+    <article class="w3-container w3-pale-blue">
+      <p>
+        Putting the shuffled lines of a program into the right order is a good way to learn the logic of programming without worrying about the syntax.
+      </p>
+      <p>
+        This site turns a program into shuffled and draggable "fridge magnets" which teachers can share with their students via a generated code.
+      </p>
+    </article>
+    <div class="w3-row w3-pale-blue w3-container">
+      <div class="w3-half w3-container">
+        <h3>Teachers</h3>
+        <p>Enter your program here. (It's up to you to decide what to do with curly braces etc.)</p>
+        <textarea name="inputText" id="inputText" cols="40" rows="5" class="w3-round"></textarea>
+        <br>
+          <button class="w3-btn w3-teal w3-round" id="submit" type="button" onclick="sendToDatabase()"> Get code</button>
+          <label>Share with students: <span id="shareCode"><strong>54k5j45kj4j4k5j</strong></span></label>
+    </div>
+    <div class="w3-half w3-container">
+        <h3>Students</h3>
+      <label class="w3-round">Enter code here:</label>
+      <input type="text" id="keyInput">
+      <button type="button" class="w3-btn w3-teal w3-round" onclick="getMagnets()">Get magnets</button>
+    </div>
+    </div>
 
     <script src="code/sendToDatabase.js"></script>
     <script src="/__/firebase/7.12.0/firebase-app.js"></script>
     <script src="/__/firebase/7.12.0/firebase-database.js"></script>
     <script src="/__/firebase/init.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </body>
 </html>

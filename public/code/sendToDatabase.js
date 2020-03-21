@@ -1,15 +1,19 @@
+$(document).ready((()=>{
+    console.log("ready");
+}))
+
 function sendToDatabase(){
-    var input = {text: document.getElementById("inputText").value};
+    var input = {text: $('#inputText').val()};
     var newKey = firebase.database().ref('magnets').push().key;
     var entry = {};
     entry[newKey] = input;
-    document.getElementById("shareCode").innerHTML = newKey;
-    return firebase.database().ref('magnets'+newKey).update(input);
+    $("#shareCode").text(newKey);
+    return firebase.database().ref('magnets' + newKey).update(input);
 }    
 
 function getMagnets(){
-    var key = document.getElementById("keyInput").value;
-    firebase.database().ref('magnets'+key).once('value', function(snapshot) {
-        document.getElementById('magnets').value = snapshot.val().text;
+    var key = $("#keyInput").val();
+    firebase.database().ref('magnets' + key).once('value', function(snapshot) {
+        $('#magnets').val(snapshot.val().text);
       });
 }
