@@ -1,3 +1,7 @@
+$(document).ready(function(){
+
+})
+
 function sendToDatabase(){
     var input = {text: $('#inputText').val()};
     var newKey = firebase.database().ref('magnets').push().key;
@@ -8,9 +12,14 @@ function sendToDatabase(){
 }    
 
 function getMagnets(){
-    console.log("in get magnets");
     var key = $("#keyInput").val();
     sessionStorage.setItem("key", "magnets" + $("#keyInput").val());
-    console.log("in sendtodb, ss:" + sessionStorage.getItem("key"));
     window.location.href = "../html/shuffled.html";
+}
+
+function copyCode(){
+    let code = document.getElementById("shareCode");
+    code.select();
+    code.setSelectionRange(0, 99999);
+    document.execCommand("copy");
 }

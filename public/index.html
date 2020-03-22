@@ -20,11 +20,23 @@
     <div class="w3-row w3-pale-blue w3-container">
       <div class="w3-half w3-container">
         <h3>Teachers</h3>
-        <p>Enter your program here. (It's up to you to decide what to do with curly braces etc.)</p>
-        <textarea name="inputText" id="inputText" cols="40" rows="5" class="w3-round"></textarea>
+        <p>Enter your program here. Decide yourself what to do with curly braces etc. You can also add comments after lines if you want to give clues.</p>
+        <textarea name="inputText" id="inputText" cols="40" rows="8" class="w3-round" placeholder="def bubble_sort(arr):
+        swaps = True
+        while swaps:
+            swaps = False
+            for i in range(len(arr) - 1):
+                if arr[i] > arr[i+1]:
+                    swaps = True
+                    arr[i], arr[i+1] = arr[i+1], arr[i]
+"></textarea>
         <br>
           <button class="w3-btn w3-teal w3-round" id="submit" type="button" onclick="sendToDatabase()"> Get code</button>
-          <label>Share with students: <span id="shareCode"><strong>54k5j45kj4j4k5j</strong></span></label>
+          <div class=w3-right>
+            <label>Share with students: <input type="text" id="shareCode">
+              <img class="w3-right" src="https://img.icons8.com/pastel-glyph/32/000000/clipboard--v1.png" alt="Copy code to clipboard" onclick="copyCode()">  
+          </div>
+          
     </div>
     <div class="w3-half w3-container">
         <h3>Students</h3>
