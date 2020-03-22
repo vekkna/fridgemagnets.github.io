@@ -15,28 +15,25 @@ $(document).ready((()=>{
 
 function makeMagnets(text){
     let arr = text.split('\n');
-    console.log("array: " + arr);
     let trimmed = arr.map(function(el){
         return el.trim() + " ";
     });
-    console.log("trimmed: " + trimmed);
     this.solution = trimmed.join("");
-    console.log("Solution: " + solution);
     trimmed = shuffle(trimmed);
     trimmed.forEach(el => {
-        $("#sortable").append("<li><span>" + el +"</span></li>")
+        $("#sortable").append("<li>" + el +"</li>")
     });
 };
 
 function checkOrder(event, ui){
     var guess = $("#sortable").children().text();
-    console.log("Guess: " + guess);
-    console.log("Solution: " + this.solution);
     if(guess === solution){
-        console.log("correct");
+        $("#feedback").text("RIGHT");
+        $("#feedback").css("color", "green");
     }
     else{
-        console.log("wrong");
+        $("#feedback").text("WRONG");
+        $("#feedback").css("color", "red");
     }
 };
 

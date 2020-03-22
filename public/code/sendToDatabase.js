@@ -1,19 +1,19 @@
-$(document).ready(function(){
-
-})
-
 function sendToDatabase(){
-    var input = {text: $('#inputText').val()};
-    var newKey = firebase.database().ref('magnets').push().key;
-    var entry = {};
-    entry[newKey] = input;
-    $("#shareCode").text(newKey);
-    return firebase.database().ref('magnets' + newKey).update(input);
+    if($("#inputText").val().length === 0){
+        return;
+    }
+    var input = {text: $("#inputText").val()};
+    var newKey = firebase.database().ref("magnets").push().key;
+    $("#shareCode").val(newKey);
+    return firebase.database().ref("magnets" + newKey).update(input);
 }    
 
 function getMagnets(){
     var key = $("#keyInput").val();
-    sessionStorage.setItem("key", "magnets" + $("#keyInput").val());
+    if (key.length === 0){
+        key = "-M32LeQgFDZzdkpMZ3YB";
+    }
+    sessionStorage.setItem("key", "magnets" + key);
     window.location.href = "../html/shuffled.html";
 }
 
