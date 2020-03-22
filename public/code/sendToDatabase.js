@@ -1,7 +1,3 @@
-$(document).ready((()=>{
-    console.log("ready");
-}))
-
 function sendToDatabase(){
     var input = {text: $('#inputText').val()};
     var newKey = firebase.database().ref('magnets').push().key;
@@ -12,8 +8,9 @@ function sendToDatabase(){
 }    
 
 function getMagnets(){
+    console.log("in get magnets");
     var key = $("#keyInput").val();
-    firebase.database().ref('magnets' + key).once('value', function(snapshot) {
-        $('#magnets').val(snapshot.val().text);
-      });
+    sessionStorage.setItem("key", "magnets" + $("#keyInput").val());
+    console.log("in sendtodb, ss:" + sessionStorage.getItem("key"));
+    window.location.href = "../html/shuffled.html";
 }
