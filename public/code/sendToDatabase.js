@@ -1,3 +1,10 @@
+$(document).ready(()=>{
+    document.getElementById("keyInput").addEventListener("click", ()=>{
+        navigator.clipboard.readText().then(
+            clipText => document.getElementById("keyInput").value = clipText);
+    });
+});
+
 function sendToDatabase(){
     if($("#inputText").val().length === 0){
         return;

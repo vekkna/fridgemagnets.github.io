@@ -15,13 +15,14 @@ $(document).ready((()=>{
 
 function makeMagnets(text){
     let arr = text.split('\n');
-    let trimmed = arr.map(function(el){
-        return el.trim() + " ";
+    let stripped = arr.filter((line) => line.length !== 0);
+    let trimmed = stripped.map(function(line){
+        return line.trim() + " ";
     });
     this.solution = trimmed.join("");
     trimmed = shuffle(trimmed);
-    trimmed.forEach(el => {
-        $("#sortable").append("<li>" + el +"</li>")
+    trimmed.forEach(line => {
+        $("#sortable").append("<li>" + line +"</li>")
     });
 };
 
