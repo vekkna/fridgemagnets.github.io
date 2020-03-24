@@ -8,8 +8,15 @@ $(document).ready((()=>{
     $( "#sortable" ).disableSelection();
     var key = sessionStorage.getItem("key");
     firebase.database().ref(key).once('value', function(snapshot) {
-        this.sourceCode = snapshot.val().text;
-        makeMagnets(snapshot.val().text);
+        if(snapshot.val() === null){
+            console.log("nothing found")
+            document.getElementById("report").innerHTML = "Sorry, no puzzle for that key found."
+        }
+        else{
+            document.getElementById("report").innerHTML = "Their order is <span id='feedback'>WRONG</span>"
+            this.sourceCode = snapshot.val().text;
+            makeMagnets(snapshot.val().text);
+        }
       });
 }));
 

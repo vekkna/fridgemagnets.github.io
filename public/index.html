@@ -15,7 +15,7 @@
       <h6>
         Putting the shuffled lines of a program into the right order is a good way of focusing on logic without having to worry about syntax.
         <br>
-        This site turns code into shuffled and draggable "fridge magnets" which teachers can share with their students.
+        This site turns blocks of code into shuffled and draggable "fridge magnets" which teachers can share with their students.
       </h6>
     </article class="w3-margin-top">
     <div class="w3-row w3-pale-blue w3-container">
@@ -32,15 +32,15 @@
                     arr[i], arr[i+1] = arr[i+1], arr[i] // COULD BE IN TWO PLACES
 "></textarea>
         <br>
-          <button class="w3-btn w3-teal w3-round" id="submit" type="button" onclick="sendToDatabase()"> Get code</button>
+          <button class="w3-btn w3-teal w3-round" id="submit" type="button" onclick="sendToDatabase()"> Get key</button>
           <div class=w3-right>
-            <label>Share with students: <input type="text" id="shareCode">
+            <label>Share this key with your students: <input type="text" id="shareCode">
               <img class="w3-right" src="https://img.icons8.com/pastel-glyph/32/000000/clipboard--v1.png" alt="Copy code to clipboard" onclick="copyCode()">  
           </div>
     </div>
     <div class="w3-half w3-container">
         <h3>Students</h3>
-      <label>Enter code here:</label>
+      <label>Enter the key your teacher gave you here:</label>
       <input type="text" id="keyInput">
       <button type="button" class="w3-btn w3-teal w3-round" onclick="getMagnets()">Get magnets</button>
       <p> <em>Press the button with an empty field for a practice example.</em></p>
