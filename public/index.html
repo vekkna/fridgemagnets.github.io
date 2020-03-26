@@ -13,7 +13,7 @@
     </header>
     <article class="w3-container w3-pale-blue w3-margin">
       <h6>
-        Putting the shuffled lines of a program into the right order is a good way of focusing on logic without having to worry about syntax.
+        Putting the shuffled lines of code into the right order is a good way of focusing on logic without having to worry about syntax.
         <br>
         This site turns blocks of code into shuffled and draggable "fridge magnets" which teachers can share with their students.
       </h6>
@@ -21,7 +21,9 @@
     <div class="w3-row w3-pale-blue w3-container">
       <div class="w3-half w3-container">
         <h3>Teachers</h3>
-        <p>Enter your program here. Decide yourself what to do with curly braces etc. You can also add comments after lines if you want to give clues. Blank lines will be removed, as will white space from the start and end of lines.</p>
+        <p>Enter a description of what the code should do here:</p>
+        <textarea name="descriptionText" id="descriptionText" cols="40" rows="1" placeholder="A function that takes an array and repeatedly swaps unordered adjacent elements till entire array is sorted."></textarea>
+        <p>Enter your code here. Decide yourself what to do with curly braces etc. You can also add comments after lines if you want to give clues. Blank lines will be removed, as will white space from the start and end of lines.</p>
         <textarea name="inputText" id="inputText" cols="40" rows="8" class="w3-round" placeholder="def bubble_sort(arr):
         swaps = True
         while swaps:
