@@ -2,6 +2,14 @@ textarea{
     width: 100%;
 }
 
+ul {
+    white-space: pre-wrap;
+  }
+
+textarea{
+    overflow: visible;
+}
+
 #sortable { 
     list-style-type: none; 
     margin: 0; 
@@ -13,7 +21,7 @@ textarea{
         padding: 0.4em;
         font-family: 'Courier New';
         border-radius: 10px;
-        text-align: center;
+        text-align: left;
         width: max-content;
         background-color: white;
         box-shadow: 2px 2px;
@@ -21,5 +29,9 @@ textarea{
 
 #feedback{
     color: red;
+    font-weight: bold;
+}
+
+#description{
     font-weight: bold;
 }

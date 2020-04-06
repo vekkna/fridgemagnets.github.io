@@ -22,7 +22,7 @@ function makeMagnets(input){
     
     $("#description").text(input.description);
 
-    let arr = input.text.split('\n');
+    let arr = input.text.split('\n\n');
     let stripped = arr.filter((line) => line.length !== 0);
     let trimmed = stripped.map(function(line){
         return line.trim() + " ";
@@ -30,6 +30,7 @@ function makeMagnets(input){
     this.solution = trimmed.join("");
     trimmed = shuffle(trimmed);
     trimmed.forEach(line => {
+        console.log(line)
         $("#sortable").append("<li>" + line +"</li>")
     });
 };

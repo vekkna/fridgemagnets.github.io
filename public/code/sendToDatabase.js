@@ -11,7 +11,6 @@ function sendToDatabase(){
     }
     var input = {description: $("#descriptionText").val(),
         text: $("#inputText").val()};
-    
     var newKey = firebase.database().ref("magnets").push().key;
     $("#shareCode").val(newKey);
     return firebase.database().ref("magnets" + newKey).update(input);
